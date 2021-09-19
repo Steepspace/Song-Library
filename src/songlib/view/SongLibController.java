@@ -1,4 +1,4 @@
-package SongLibrary.view;
+package songlib.view;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
