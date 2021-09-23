@@ -31,6 +31,12 @@ public class SongLibIO {
 
         songList = read();
 
+        // Remove any trailing or leading white spaces
+        song.setName(song.getName().strip());
+        song.setArtist(song.getArtist().strip());
+
+        if (song.getAlbum() != null) song.setAlbum(song.getAlbum().strip());
+
         if(songList.contains(song)) return 2;
 
         songList.add(song);
@@ -50,6 +56,12 @@ public class SongLibIO {
             (newSong.getYear() != null && newSong.getYear() < 1)) return 1;
 
         songList = read();
+
+        // Remove any trailing or leading white spaces
+        newSong.setName(newSong.getName().strip());
+        newSong.setArtist(newSong.getArtist().strip());
+
+        if (newSong.getAlbum() != null) newSong.setAlbum(newSong.getAlbum().strip());
 
         if (!oldSong.equals(newSong) && songList.contains(newSong)) return 2;
 
