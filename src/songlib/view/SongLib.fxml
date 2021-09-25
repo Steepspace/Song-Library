@@ -15,12 +15,15 @@
 		AnchorPane.leftAnchor = "10" 
 		AnchorPane.bottomAnchor = "10"
 		prefWidth = "200"/>
-	<Text layoutX="220" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Song" wrappingWidth="105.7294921875" />
-    <Text layoutX="220" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist" wrappingWidth="105.7294921875" />
-    <Text layoutX="220" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Album" wrappingWidth="105.7294921875" />
-    <Text layoutX="220" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year" wrappingWidth="105.7294921875" />
-    <Text fx:id="songText" layoutX="320" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="----" wrappingWidth="105.7294921875" />
-    <Text fx:id="artText" layoutX="320" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="----" wrappingWidth="105.7294921875" />
-    <Text fx:id="albText" layoutX="320" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="----" wrappingWidth="105.7294921875" />
-    <Text fx:id="yText" layoutX="320" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="----" wrappingWidth="105.7294921875" />
+	<Text layoutX="220" layoutY="91" text="Song" wrappingWidth="105.7294921875" />
+    <Text layoutX="220" layoutY="107" text="Artist" wrappingWidth="105.7294921875" />
+    <Text layoutX="220" layoutY="123" text="Album" wrappingWidth="105.7294921875" />
+    <Text layoutX="220" layoutY="139" text="Year" wrappingWidth="105.7294921875" />
+    <Text fx:id="songText" layoutX="320" layoutY="91" text="----" wrappingWidth="105.7294921875" />
+    <Text fx:id="artText" layoutX="320" layoutY="107" text="----" wrappingWidth="105.7294921875" />
+    <Text fx:id="albText" layoutX="320" layoutY="123" text="----" wrappingWidth="105.7294921875" />
+    <Text fx:id="yText" layoutX="320" layoutY="139" text="----" wrappingWidth="105.7294921875" />
+    <Button fx:id="addB" layoutX="220" layoutY="155" text="ADD" onAction="#addSong"/>
+    <Button fx:id="delB" layoutX="220" layoutY="187" text="DELETE" onAction="#deleteSong"/>
+    <Button fx:id="editB" layoutX="220" layoutY="219" text="EDIT" onAction="#editSong"/>
 </AnchorPane>
