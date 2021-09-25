@@ -17,7 +17,7 @@ public class SongLib extends Application{
 		SongLibController songController = loader.getController();
 		songController.start();
 
-		Scene scene = new Scene(root, 200, 300);
+		Scene scene = new Scene(root, 400, 300);
 		primaryStage.setScene(scene);
 		primaryStage.show(); 
 
