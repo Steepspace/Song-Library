@@ -33,8 +33,12 @@ public class Song implements Comparable<Song> {
         return this.name.equalsIgnoreCase(other.name) && this.artist.equalsIgnoreCase(other.artist);
     }
 
+    // public String toString(){
+    //     return this.name + "|" + this.artist + "|" + this.album + "|" + this.year;
+    // }
+
     public String toString(){
-        return this.name + "|" + this.artist + "|" + this.album + "|" + this.year;
+        return this.name + ", " + this.artist;
     }
 
     public void setName(final String name) {
