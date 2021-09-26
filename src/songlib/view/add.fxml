@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="304.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="songlib.view.SongLibAddController">
+   <children>
+      <TextField id="addName" fx:id="addName" alignment="CENTER" layoutX="26.0" layoutY="128.0" prefHeight="24.0" prefWidth="124.0" promptText="Name">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField id="addArtist" fx:id="addArtist" alignment="CENTER" layoutX="174.0" layoutY="128.0" prefHeight="40.0" prefWidth="131.0" promptText="Artist">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField id="addAlbum" fx:id="addAlbum" alignment="CENTER" layoutX="320.0" layoutY="128.0" prefHeight="40.0" prefWidth="152.0" promptText="Album">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField id="addYear" fx:id="addYear" alignment="CENTER" layoutX="478.0" layoutY="128.0" prefHeight="40.0" prefWidth="152.0" promptText="Year">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Button id="addConfirm" fx:id="addConfirm" layoutX="150.0" layoutY="211.0" mnemonicParsing="false" onAction="#addSong" prefHeight="60.0" prefWidth="124.0" text="Confirm">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button id="addCancel" fx:id="addCancel" layoutX="320.0" layoutY="211.0" mnemonicParsing="false" onAction="#switchToDefault" prefHeight="60.0" prefWidth="139.0" text="Cancel">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Label layoutX="237.0" layoutY="31.0" prefHeight="60.0" prefWidth="167.0" text="Add Song" textAlignment="RIGHT">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
