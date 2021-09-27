@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextField?>
+
+<AnchorPane
+    maxHeight="-Infinity"
+    maxWidth="-Infinity"
+    minHeight="-Infinity"
+    minWidth="-Infinity"
+    prefHeight="304.0"
+    prefWidth="658.0"
+	xmlns="http://javafx.com/javafx/8"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="songlib.view.SongLibController">
+	
+	<ListView fx:id="listView" 
+		AnchorPane.topAnchor = "10"
+		AnchorPane.leftAnchor = "10" 
+		AnchorPane.bottomAnchor = "10"
+		prefWidth = "200"/>
+	<Text layoutX="220" layoutY="91" text="Song" wrappingWidth="105.7294921875" />
+    <Text layoutX="220" layoutY="107" text="Artist" wrappingWidth="105.7294921875" />
+    <Text layoutX="220" layoutY="123" text="Album" wrappingWidth="105.7294921875" />
+    <Text layoutX="220" layoutY="139" text="Year" wrappingWidth="105.7294921875" />
+    <Text fx:id="nameText" layoutX="320" layoutY="91" text="----" wrappingWidth="105.7294921875" />
+    <Text fx:id="artistText" layoutX="320" layoutY="107" text="----" wrappingWidth="105.7294921875" />
+    <Text fx:id="albumText" layoutX="320" layoutY="123" text="----" wrappingWidth="105.7294921875" />
+    <Text fx:id="yearText" layoutX="320" layoutY="139" text="----" wrappingWidth="105.7294921875" />
+    <Button fx:id="addB" layoutX="220" layoutY="155" text="ADD" onAction="#switchToAdd"/>
+    <Button fx:id="editB" layoutX="220" layoutY="187" text="EDIT" onAction="#switchToEdit"/>
+    <Button fx:id="delB" layoutX="220" layoutY="219" text="DELETE" onAction="#switchToDelete"/>
+</AnchorPane>
