@@ -1,3 +1,8 @@
+/*
+ * @author Apurva Narde
+ * @author Max Geiger
+ */
+
 package songlib.io;
 
 import javafx.collections.ObservableList;
@@ -11,28 +16,14 @@ import java.io.File;
 public class SongLibIO {
 
     private ObservableList<Song> songList;
-    private String path;
+    private final String path;
 
     public SongLibIO(final String path){
         this.path = path;
         read();
     }
 
-    // 0 if successfully added
-    // 1 if either name or artist is null or year is nonpositive
-    // 2 if song already exists
     public boolean add(final Song song){
-        // if (song == null ||
-        //     song.getName() == null ||
-        //     song.getArtist() == null ||
-        //     (song.getYear() != null && song.getYear() < 1)) return 1;
-
-        // // Remove any trailing or leading white spaces
-        // song.setName(song.getName().strip());
-        // song.setArtist(song.getArtist().strip());
-
-        // if (song.getAlbum() != null) song.setAlbum(song.getAlbum().strip());
-
         if(songList.contains(song)) return false;
 
         songList.add(song);
@@ -41,27 +32,10 @@ public class SongLibIO {
         return true;
     }
 
-    // 0 if successfully updated
-    // 1 if either name or artist is null or year is nonpositive
-    // 2 if newSong already exists in the data
-    // 3 if oldSong does not exist in the data
     public boolean update(final Song oldSong, final Song newSong){
-        // if (newSong == null ||
-        //     newSong.getName() == null ||
-        //     newSong.getArtist() == null ||
-        //     (newSong.getYear() != null && newSong.getYear() < 1)) return 1;
-
-        // // Remove any trailing or leading white spaces
-        // newSong.setName(newSong.getName().strip());
-        // newSong.setArtist(newSong.getArtist().strip());
-
-        // if (newSong.getAlbum() != null) newSong.setAlbum(newSong.getAlbum().strip());
-
         if (!oldSong.equals(newSong) && songList.contains(newSong)) return false;
 
         final int index = songList.indexOf(oldSong);
-
-        // if (index == -1) return 3;
 
         songList.set(index, newSong);
 

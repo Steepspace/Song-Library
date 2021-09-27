@@ -1,3 +1,8 @@
+/*
+ * @author Apurva Narde
+ * @author Max Geiger
+ */
+
 package songlib.io;
 
 public class Song implements Comparable<Song> {
@@ -33,12 +38,8 @@ public class Song implements Comparable<Song> {
         return this.name.equalsIgnoreCase(other.name) && this.artist.equalsIgnoreCase(other.artist);
     }
 
-    // public String toString(){
-    //     return this.name + "|" + this.artist + "|" + this.album + "|" + this.year;
-    // }
-
     public String toString(){
-        return this.name + ", " + this.artist;
+        return this.name + " - " + this.artist;
     }
 
     public void setName(final String name) {

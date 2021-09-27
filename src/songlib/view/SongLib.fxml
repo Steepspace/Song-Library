@@ -32,5 +32,5 @@
     <Text fx:id="yearText" layoutX="320" layoutY="139" text="----" wrappingWidth="105.7294921875" />
     <Button fx:id="addB" layoutX="220" layoutY="155" text="ADD" onAction="#switchToAdd"/>
     <Button fx:id="editB" layoutX="220" layoutY="187" text="EDIT" onAction="#switchToEdit"/>
-    <Button fx:id="delB" layoutX="220" layoutY="219" text="DELETE" onAction="#deleteSong"/>
+    <Button fx:id="delB" layoutX="220" layoutY="219" text="DELETE" onAction="#switchToDelete"/>
 </AnchorPane>

@@ -2,29 +2,27 @@ package songlib.view;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Button;
 import javafx.scene.control.SelectionModel;
-import javafx.scene.control.FocusModel;
 import javafx.scene.text.Text;
 import javafx.scene.Scene;
+/*
+ * @author Apurva Narde
+ * @author Max Geiger
+ */
+
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 import java.io.IOException;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import songlib.io.SongLibIO;
 import songlib.io.Song;
 
-public class SongLibController implements Initializable{
+public class SongLibController{
 
 	@FXML ListView<Song> listView;
 	@FXML Text nameText, artistText, albumText, yearText;
@@ -33,33 +31,51 @@ public class SongLibController implements Initializable{
 	SongLibIO IO = new SongLibIO("../data/data.csv");//change to generic path variable
 	private SelectionModel<Song> model;
 
-	public void switchToAdd(ActionEvent e) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/songlib/view/add.fxml"));
-		Scene scene = new Scene(root);
-		Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+	public void switchToAdd(final ActionEvent e) throws IOException {
+		final Parent root = FXMLLoader.load(getClass().getResource("/songlib/view/add.fxml"));
+		final Scene scene = new Scene(root);
+		final Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		stage.setScene(scene);
 		stage.show();
 	}
 
-	public void switchToEdit(ActionEvent e) throws IOException {
-		Song song = model.getSelectedItem();
+	public void switchToEdit(final ActionEvent e) throws IOException {
+		final Song song = model.getSelectedItem();
 		if(song == null) return;
 
-		FXMLLoader loader = new FXMLLoader();
+		final FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("/songlib/view/edit.fxml"));
-		Parent root = loader.load();
+		final Parent root = loader.load();
 
-		SongLibEditController controller = loader.getController();
+		final SongLibEditController controller = loader.getController();
 
 		controller.setField(song);
 
-		Scene scene = new Scene(root);
-		Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		final Scene scene = new Scene(root);
+		final Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		stage.setScene(scene);
 		stage.show();
 	}
 
-	public void initialize(URL url, ResourceBundle rb) {
+	public void switchToDelete(final ActionEvent e) throws IOException {
+		final Song song = model.getSelectedItem();
+		if(song == null) return;
+
+		final FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/songlib/view/delete.fxml"));
+		final Parent root = loader.load();
+
+		final SongLibDeleteController controller = loader.getController();
+
+		controller.setField(song);
+
+		final Scene scene = new Scene(root);
+		final Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		stage.setScene(scene);
+		stage.show();
+	}
+
+	public void initialize(){
 		//insert items into listview
 		listView.setItems(IO.getList());
 
@@ -70,7 +86,7 @@ public class SongLibController implements Initializable{
 	}
 
 	private void songDetail(){
-		Song selected = model.getSelectedItem();
+		final Song selected = model.getSelectedItem();
 		if(selected == null){
 			nameText.setText(null);
 			artistText.setText(null);
@@ -85,18 +101,18 @@ public class SongLibController implements Initializable{
 		if(selected.getYear() != null) yearText.setText(selected.getYear().toString());
 		else yearText.setText(null);
 	}
-	
-	public boolean add(Song song){
+
+	public boolean add(final Song song){
 		if (IO.add(song)){
 			model.select(song);
 			return true;
 		}
 		return false;
 	}
-	
-	public void deleteSong(ActionEvent e){
-		Song song = model.getSelectedItem();
-		int songIndex = model.getSelectedIndex();
+
+	public void delete(final Song song){
+		model.select(song);
+		final int songIndex = model.getSelectedIndex();
 
 		if(songIndex == IO.getList().size()-1) model.selectPrevious();
 		else model.selectNext();
@@ -104,8 +120,8 @@ public class SongLibController implements Initializable{
 		IO.delete(song);
 		songDetail();
 	}
-	
-	public boolean edit(Song old, Song song){
+
+	public boolean edit(final Song old, final Song song){
 		if (IO.update(old, song)){
 			model.select(song);
 			return true;

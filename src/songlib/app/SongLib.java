@@ -1,3 +1,8 @@
+/*
+ * @author Apurva Narde
+ * @author Max Geiger
+ */
+
 package songlib.app;
 
 import javafx.application.Application;
@@ -8,16 +13,16 @@ import javafx.scene.Parent;
 
 public class SongLib extends Application{
 
-    public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/songlib/view/SongLib.fxml"));
+    public void start(final Stage primaryStage) throws Exception {
+        final Parent root = FXMLLoader.load(getClass().getResource("/songlib/view/SongLib.fxml"));
 
-        Scene scene = new Scene(root);
+        final Scene scene = new Scene(root);
 
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         launch(args);
     }
 }
