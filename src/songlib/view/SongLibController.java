@@ -1,3 +1,8 @@
+/*
+ * @author Apurva Narde
+ * @author Max Geiger
+ */
+
 package songlib.view;
 
 import javafx.fxml.FXML;
@@ -6,10 +11,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionModel;
 import javafx.scene.text.Text;
 import javafx.scene.Scene;
-/*
- * @author Apurva Narde
- * @author Max Geiger
- */
 
 import javafx.scene.Node;
 import javafx.scene.Parent;
