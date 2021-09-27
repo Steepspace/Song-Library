@@ -3,7 +3,6 @@ package songlib.view;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListView;
-import javafx.scene.control.Button;
 import javafx.scene.control.SelectionModel;
 import javafx.scene.text.Text;
 import javafx.scene.Scene;
@@ -26,7 +25,6 @@ public class SongLibController{
 
 	@FXML ListView<Song> listView;
 	@FXML Text nameText, artistText, albumText, yearText;
-	@FXML Button addB, delB, editB;
 
 	SongLibIO IO = new SongLibIO("../data/data.csv");//change to generic path variable
 	private SelectionModel<Song> model;
